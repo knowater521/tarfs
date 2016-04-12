@@ -271,6 +271,10 @@ func (f *AssetFile) Stat() (os.FileInfo, error) {
 	return &f.FakeFile, nil
 }
 
+func (f *AssetFile) Size() int64 {
+	return f.FakeFile.Size()
+}
+
 // AssetDirectory implements http.File interface for a directory. It is always
 // empty.
 type AssetDirectory struct {
