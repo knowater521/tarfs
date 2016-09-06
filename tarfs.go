@@ -77,7 +77,7 @@ func New(tarData []byte, local string) (*FileSystem, error) {
 		// containing the specified size of data. We don't use tr.Read() so that
 		// we can avoid copying.
 		end := br.pos + hdr.Size
-		fs.files[hdr.Name] = tarData[br.pos:end]
+		fs.files[filepath.ToSlash(hdr.Name)] = tarData[br.pos:end]
 		log.Tracef("Loaded tarfs file %v", hdr.Name)
 
 		// Advance to the next tar header. Note that we round up to the next

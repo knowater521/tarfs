@@ -35,7 +35,7 @@ func EncodeToTarString(dir string, w io.Writer) (err error) {
 		if info.IsDir() {
 			return nil
 		}
-		name := path
+		name := filepath.ToSlash(path)
 		if strings.HasPrefix(name, dirPrefix) {
 			name = path[dirPrefixLen:]
 		}

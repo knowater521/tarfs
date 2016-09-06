@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/getlantern/tarfs"
+	"github.com/yinghuocho/tarfs"
 )
 
 const (
